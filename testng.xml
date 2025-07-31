@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AppiumLoginSuite" parallel="tests">
+<!--    <test name="Login on iPhone 15">-->
+<!--        <parameter name="env" value="dev"/>-->
+<!--        <parameter name="device" value="iPhone 15"/>-->
+<!--        <classes>-->
+<!--            <class name="org.example.tests.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Login on Pixel 7">
+        <parameter name="env" value="qa"/>
+        <parameter name="device" value="Pixel 7"/>
+        <classes>
+            <class name="org.example.tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>
