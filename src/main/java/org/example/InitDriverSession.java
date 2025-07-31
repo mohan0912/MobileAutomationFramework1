@@ -22,9 +22,6 @@ public class InitDriverSession {
                 capabilities.setCapability("platformVersion", "13");
                 capabilities.setCapability("app", "lt://APP10160301691753941998244672");
                 capabilities.setCapability("isRealMobile", true);
-                capabilities.setCapability("build","RM_01");
-                capabilities.setCapability("name","MAT01");
-
                 break;
 
             case "iPhone 15":
@@ -33,8 +30,6 @@ public class InitDriverSession {
                 capabilities.setCapability("platformVersion", "17");
                 capabilities.setCapability("app", "lt://APP10160301691753942019340150");
                 capabilities.setCapability("isRealMobile", true);
-                capabilities.setCapability("build","RM_01");
-                capabilities.setCapability("name","MAT01");
                 break;
 
             default:
