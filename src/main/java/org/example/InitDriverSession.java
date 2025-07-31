@@ -35,7 +35,8 @@ public class InitDriverSession {
             default:
                 throw new RuntimeException("Missing Device Configuration for: " + sMobileDevice);
         }
+        System.out.println("https://"+userName+":"+accessKey+"@mobile-hub.lambdatest.com/wd/hub");
 
-        return new AppiumDriver(new URL("https://"+userName+":"+accessKey+"@hub.lambdatest.com/wd/hub"), capabilities);
+        return new AppiumDriver(new URL("https://"+userName+":"+accessKey+"@mobile-hub.lambdatest.com/wd/hub"),capabilities);
     }
 }
