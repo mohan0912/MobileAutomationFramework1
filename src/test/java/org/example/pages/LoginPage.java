@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import java.time.Duration;
 
 public class LoginPage {
@@ -19,7 +20,7 @@ public class LoginPage {
 
     public LoginPage(AppiumDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         String platform = driver.getCapabilities().getCapability("platformName").toString().toLowerCase();
 
@@ -29,10 +30,10 @@ public class LoginPage {
             loginButtonLocator = By.xpath("//*[@content-desc='test-LOGIN']");
             productsTitleLocator = By.xpath("//*[@text='PRODUCTS']");
         } else {
-            usernameLocator = By.xpath("//XCUIElementTypeOther[@name='test-Username']");
-            passwordLocator = By.xpath("//XCUIElementTypeOther[@name='test-Password']");
-            loginButtonLocator = By.xpath("//XCUIElementTypeOther[@name='test-LOGIN']");
-            productsTitleLocator = By.xpath("//XCUIElementTypeStaticText[@name='PRODUCTS']");
+            usernameLocator = By.xpath("//*[@name='test-Username']");
+            passwordLocator = By.xpath("//*[@name='test-Password']");
+            loginButtonLocator = By.xpath("//*[@name='test-LOGIN']");
+            productsTitleLocator = By.xpath("//*[@name='PRODUCTS']");
         }
     }
 
@@ -47,8 +48,8 @@ public class LoginPage {
     }
 
     public void tapLoginButton() {
-
-        driver.findElement(loginButtonLocator).click();
+        WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(loginButtonLocator));
+        loginBtn.click();
     }
 
     public boolean isLoginSuccessful() {
